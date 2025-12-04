@@ -220,39 +220,40 @@ const Navbar = () => {
   );
 };
 
-const Hero = () => (
-  <section 
-    id="home" 
-    className="min-h-screen flex items-center pt-24 pb-12"
+<div className="lg:w-1/2 text-center lg:text-left">
+  <p 
+    className="text-xl md:text-2xl mb-2 font-medium" 
+    style={{ color: customColors.text }}
   >
-    <div className="container mx-auto px-4 sm:px-8 max-w-7xl">
-      <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
-        <div className="lg:w-1/2 text-center lg:text-left">
-          {/* ... Hero Text Content ... */}
-        </div>
-        
-        <div className="lg:w-1/2 flex justify-center lg:justify-end">
-          <img
-            // *******************************************************************
-            // FIX: Imported variable 'heroImage' is used here
-            // *******************************************************************
-            src={heroImage} 
-            // *******************************************************************
-            
-            alt="Developer working on a laptop"
-            className="w-full max-w-sm h-auto rounded-full shadow-2xl transition-all duration-500 hover:scale-[1.02]"
-            style={{ 
-                boxShadow: `0 0 50px -10px ${customColors.accent}A0`,
-                filter: 'saturate(1.2)'
-            }}
-            // Fallback: Agar upar wala URL fail ho jaye toh yeh dikhega
-            onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x400/2A211C/F5E5DDA?text=Avatar"; }}
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-);
+    Hi, I'm
+  </p>
+  <h2 
+    className="text-5xl md:text-7xl font-extrabold leading-tight mb-4" 
+    style={{ color: customColors.accent }}
+  >
+    Ayesha
+  </h2>
+  <h1 
+    className="text-3xl md:text-4xl font-semibold mb-6" 
+    style={{ color: customColors.text }}
+  >
+    Frontend Developer
+  </h1>
+  <p 
+    className="text-lg mb-10 max-w-lg lg:max-w-none" 
+    style={{ color: customColors.text }}
+  >
+    I build beautiful, high-performance websites and web applications, specializing in **React** and **Tailwind CSS**.
+  </p>
+  <div className="flex justify-center lg:justify-start space-x-4">
+    <Button onClick={() => scrollToSection('contact')}>
+      Get in Touch
+    </Button>
+    <Button primary={false} onClick={() => scrollToSection('projects')}>
+      View Projects <ArrowRightIcon className="inline-block ml-2 w-5 h-5" />
+    </Button>
+  </div>
+</div>
 
 // ... باقی کوڈ
 
