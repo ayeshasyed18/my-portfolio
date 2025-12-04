@@ -85,13 +85,13 @@ const projectsData = [
   {
     title: 'Islamic Content E-commerce UI',
     description: 'A responsive, component-driven frontend for an E-commerce platform focused on Islamic content. Developed using React and Tailwind CSS, prioritizing accessible navigation, dynamic product galleries, and clean state management.',
-    imageUrl: '/Screenshot 12025-11-28 192223.png', 
+    imageUrl: '/Screenshot.png', 
   },
   // --- PROJECT CARD 2: Interactive Travel Experience UI ---
   {
     title: 'Interactive Travel Experience UI',
     description: 'A dynamic and interactive travel booking user interface built with React. Features include a complex multi-step form, interactive destination cards, and responsive map-like data presentation, all focusing on modern UI/UX principles.',
-    imageUrl: '/Screenshot2 2025-11-28 192552.png', 
+    imageUrl: '/Screenshottwo.png', 
   },
 ];
 
@@ -251,7 +251,7 @@ const Hero = () => (
             // *******************************************************************
             // Hero Section: Yahan Profile Picture ka URL daalna hai
             // *******************************************************************
-            src="/1_98FTI_wk3MHWn8w4WUOUUg.png"
+            src="/image.png"
             alt="Developer working on a laptop"
             className="w-full max-w-sm h-auto rounded-full shadow-2xl transition-all duration-500 hover:scale-[1.02]"
             style={{ 
