@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-
+// src/assets/Portfolio.jsx کے ٹاپ پر
+import heroImage from '../../public/image.png'; // 'image.png' Hero سیکشن کے لیے
+import imageOne from '../../public/Screenshot.png'; 
+import imageTwo from '../../public/Screenshottwo.png'; 
+// ...
 // --- SVG Icons (Replacement for lucide-react to avoid installation errors) ---
 const MenuIcon = (props) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
@@ -215,43 +219,17 @@ const Hero = () => (
     <div className="container mx-auto px-4 sm:px-8 max-w-7xl">
       <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
         <div className="lg:w-1/2 text-center lg:text-left">
-          <p className="text-xl mb-2" style={{ color: customColors.text }}>
-            Hi, I'm
-          </p>
-          {/* 1. Name changed to Ayesha */}
-          <h2 className="text-6xl md:text-8xl font-extrabold mb-6 leading-tight" style={{ color: customColors.accent }}>
-            Ayesha
-          </h2>
-          {/* 2. Role updated to Frontend Developer */}
-          <p className="text-2xl font-bold mb-4" style={{ color: customColors.text }}>
-            Frontend Developer
-          </p>
-          
-          {/* 3. Updated Description text based on user request */}
-          <p className="text-xl max-w-lg mx-auto lg:mx-0 mb-4" style={{ color: customColors.text }}>
-            A dedicated Frontend Developer passionate about crafting exceptional user experiences.
-          </p>
-          <p className="text-lg max-w-lg mx-auto lg:mx-0 mb-8" style={{ color: customColors.text }}>
-            I specialize in translating design concepts into high-performance, responsive, and accessible web interfaces. My primary tech stack includes React, JavaScript (ES6+), and modern CSS frameworks like Tailwind CSS (or Bootstrap/Sass). I thrive on solving complex UI challenges and ensuring every pixel is perfectly in place.
-          </p>
-          {/* COLOR CHANGE: Line color is now customColors.text (Creamy Beige) */}
-          <p className="text-xl max-w-lg mx-auto lg:mx-0 mb-8" style={{ color: customColors.text }}>
-            Let's build something beautiful and functional together.
-          </p>
-          
-          <div className="flex justify-center lg:justify-start space-x-4">
-            <Button onClick={() => scrollToSection('contact')}>
-              Contact Me
-            </Button>
-          </div>
+          {/* ... Hero Text Content ... */}
         </div>
         
         <div className="lg:w-1/2 flex justify-center lg:justify-end">
           <img
             // *******************************************************************
-            // Hero Section: Yahan Profile Picture ka URL daalna hai
+            // FIX: Imported variable 'heroImage' is used here
             // *******************************************************************
-            src="/image.png"
+            src={heroImage} 
+            // *******************************************************************
+            
             alt="Developer working on a laptop"
             className="w-full max-w-sm h-auto rounded-full shadow-2xl transition-all duration-500 hover:scale-[1.02]"
             style={{ 
@@ -266,15 +244,7 @@ const Hero = () => (
     </div>
   </section>
 );
-
-const SectionTitle = ({ children }) => (
-  <h2 
-    className="text-4xl md:text-5xl font-bold mb-12 border-b-4 pb-2 inline-block"
-    style={{ color: customColors.accent, borderColor: customColors.accent }}
-  >
-    {children}
-  </h2>
-);
+// ... باقی کوڈ
 
 const About = () => (
   <section id="about" className="py-20 lg:py-32" style={{ backgroundColor: customColors.secondary }}>
@@ -463,7 +433,6 @@ const Projects = () => (
     <div className="container mx-auto px-4 sm:px-8 max-w-7xl text-center">
       <SectionTitle>Projects</SectionTitle>
       
-      {/* Grid: Ab MD (Medium/Desktop) screen par 2 cards saath-saath nazar aayenge aur center mein rahenge */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
         {projectsData.map((project, index) => (
           <div 
@@ -473,9 +442,11 @@ const Projects = () => (
           >
             {/* Project Image Container */}
             <div className="w-full h-48 mb-4 shadow-md overflow-hidden rounded-lg">
-              {/* Har project ke object se alag imageUrl use ho raha hai. */}
               <img
-                src={project.imageUrl} 
+                // ***************************************************************
+                // FIX APPLIED HERE: project.imageUrl is replaced with project.image1
+                // ***************************************************************
+                src={project.image1} 
                 alt={`Screenshot of ${project.title}`}
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 // Fallback: Agar URL fail ho jaye toh yeh placeholder dikhega
