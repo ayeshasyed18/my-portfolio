@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import heroImage from '../../public/image.png'; // 'image.png' Hero سیکشن کے لیے
 import imageOne from '../../public/Screenshot.png'; 
 import imageTwo from '../../public/Screenshottwo.png'; 
+import aboutImage from '../../public/Website.webp';
 // ...
 // --- SVG Icons (Replacement for lucide-react to avoid installation errors) ---
 const MenuIcon = (props) => (
@@ -89,13 +90,13 @@ const projectsData = [
   {
     title: 'Islamic Content E-commerce UI',
     description: 'A responsive, component-driven frontend for an E-commerce platform focused on Islamic content. Developed using React and Tailwind CSS, prioritizing accessible navigation, dynamic product galleries, and clean state management.',
-    imageUrl: '/Screenshot.png', 
+    image1: imageOne, 
   },
   // --- PROJECT CARD 2: Interactive Travel Experience UI ---
   {
     title: 'Interactive Travel Experience UI',
     description: 'A dynamic and interactive travel booking user interface built with React. Features include a complex multi-step form, interactive destination cards, and responsive map-like data presentation, all focusing on modern UI/UX principles.',
-    imageUrl: '/Screenshottwo.png', 
+    image1: imageTwo,
   },
 ];
 
@@ -255,7 +256,7 @@ const About = () => (
         <div className="lg:w-1/3 flex justify-center">
             <img
                 // About Section: Yahan side image ka URL daalna hai
-                src="Website.webp"
+              src={aboutImage}
                 alt="Developer sitting at a desk"
                 className="w-full max-w-xs h-auto rounded-xl shadow-2xl"
                 style={{ 
