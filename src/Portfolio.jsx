@@ -244,6 +244,14 @@ const Hero = () => (
     </div>
   </section>
 );
+const SectionTitle = ({ children }) => (
+  <h2 
+    className="text-4xl md:text-5xl font-bold mb-12 border-b-4 pb-2 inline-block"
+    style={{ color: customColors.accent, borderColor: customColors.accent }}
+  >
+    {children}
+  </h2>
+);
 // ... باقی کوڈ
 
 const About = () => (
