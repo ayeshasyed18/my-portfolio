@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 // src/assets/Portfolio.jsx کے ٹاپ پر
-import heroImage from '../public/image.png'; // صرف ایک ڈاٹ (..) استعمال کریں
+// ✅ FIXED PATHS: صرف ایک ڈاٹ (..) استعمال کریں
+import heroImage from '../public/image.png'; 
 import imageOne from '../public/Screenshot.png'; 
 import imageTwo from '../public/Screenshottwo.png'; 
 import aboutImage from '../public/Website.webp';
+
 // --- SVG Icons (Replacement for lucide-react to avoid installation errors) ---
 const MenuIcon = (props) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
@@ -49,9 +51,9 @@ const ZapIcon = (props) => (
 // --- Custom Copper/Espresso Color Palette ---
 const customColors = {
   background: '#2A211C', // Dark Espresso Brown
-  secondary: '#40332B',  // Lighter Card/Section background
-  accent: '#B87333',     // Copper
-  text: '#F5E5D8',       // Creamy Beige
+  secondary: '#40332B',  // Lighter Card/Section background
+  accent: '#B87333',     // Copper
+  text: '#F5E5D8',       // Creamy Beige
 };
 
 // --- Mock Data ---
@@ -119,6 +121,7 @@ const scrollToSection = (id) => {
   }
 };
 
+// ✅ SectionTitle Definition (MUST be before components that use it)
 const SectionTitle = ({ children }) => (
   <h2 
     className="text-4xl md:text-5xl font-bold mb-12 border-b-4 pb-2 inline-block"
@@ -220,6 +223,7 @@ const Navbar = () => {
   );
 };
 
+// ✅ Hero Component (Defined before Portfolio wrapper)
 const Hero = () => (
   <section 
     id="home" 
@@ -228,7 +232,7 @@ const Hero = () => (
     <div className="container mx-auto px-4 sm:px-8 max-w-7xl">
       <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
         
-        {/* ✅ Hero Text Content یہاں شامل کیا گیا ہے */}
+        {/* ✅ Hero Text Content */}
         <div className="lg:w-1/2 text-center lg:text-left">
           <p 
             className="text-xl md:text-2xl mb-2 font-medium" 
@@ -282,8 +286,6 @@ const Hero = () => (
   </section>
 );
 
-// ... باقی کوڈ
-
 const About = () => (
   <section id="about" className="py-20 lg:py-32" style={{ backgroundColor: customColors.secondary }}>
     <div className="container mx-auto px-4 sm:px-8 max-w-7xl text-center">
@@ -292,14 +294,13 @@ const About = () => (
       <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24">
         <div className="lg:w-1/3 flex justify-center">
             <img
-                // About Section: Yahan side image ka URL daalna hai
               src={aboutImage}
-                alt="Developer sitting at a desk"
-                className="w-full max-w-xs h-auto rounded-xl shadow-2xl"
-                style={{ 
-                    boxShadow: `0 0 30px -5px ${customColors.accent}A0`,
-                    filter: 'grayscale(10%) contrast(1.1)'
-                }}
+              alt="Developer sitting at a desk"
+              className="w-full max-w-xs h-auto rounded-xl shadow-2xl"
+              style={{ 
+                  boxShadow: `0 0 30px -5px ${customColors.accent}A0`,
+                  filter: 'grayscale(10%) contrast(1.1)'
+              }}
             />
         </div>
 
@@ -310,8 +311,6 @@ const About = () => (
             </p>
           </div>
           <div className="space-y-4">
-            
-            {/* 3. Descriptions updated for context */}
             
             {/* Frontend Developer - PRIMARY FOCUS */}
             <div className="flex items-start">
@@ -481,9 +480,6 @@ const Projects = () => (
             {/* Project Image Container */}
             <div className="w-full h-48 mb-4 shadow-md overflow-hidden rounded-lg">
               <img
-                // ***************************************************************
-                // FIX APPLIED HERE: project.imageUrl is replaced with project.image1
-                // ***************************************************************
                 src={project.image1} 
                 alt={`Screenshot of ${project.title}`}
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
@@ -578,7 +574,7 @@ const Portfolio = () => {
         color: customColors.text,
         fontFamily: 'Inter, sans-serif'
       }}
-    >      
+    >      
       <Navbar />
       <main>
         <Hero />
